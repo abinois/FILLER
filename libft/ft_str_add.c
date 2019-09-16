@@ -6,7 +6,7 @@
 /*   By: abinois <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 13:46:22 by abinois           #+#    #+#             */
-/*   Updated: 2019/05/31 17:41:31 by edillenb         ###   ########.fr       */
+/*   Updated: 2019/07/28 13:39:23 by ltimsit-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ static char	*allocplus(char **buf, char ret, int *x)
 			i++;
 		if (!(buf2 = (char*)malloc(sizeof(char) * ++i + 1)))
 		{
-			ft_memdel((void**)buf);
+			ft_memdel((void**)buf, 0);
 			return (NULL);
 		}
 		buf2[i] = '\0';
 		i = 0;
 		while ((*buf)[i])
 			buf2[j++] = (*buf)[i++];
-		ft_memdel((void**)buf);
+		ft_memdel((void**)buf, 0);
 		buf2[0] = '1';
 		return (buf2);
 	}

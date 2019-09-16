@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strnchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abinois <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 22:06:00 by abinois           #+#    #+#             */
-/*   Updated: 2019/07/28 13:36:55 by ltimsit-         ###   ########.fr       */
+/*   Created: 2019/09/13 08:24:05 by abinois           #+#    #+#             */
+/*   Updated: 2019/09/13 08:40:02 by abinois          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-void	ft_strdel(char **as)
+char	*ft_strnchr(const char *s, int c, int len)
 {
-	if (!as || !*as)
-		return ;
-	ft_memdel((void**)as, 0);
+	int		i;
+
+	i = -1;
+	if (c < 0)
+		return (NULL);
+	while (++i < len)
+		if (s[i] == (char)c)
+			return ((char*)s + i);
+	if (s[i] == (char)c)
+		return ((char*)s + i);
+	return (NULL);
 }

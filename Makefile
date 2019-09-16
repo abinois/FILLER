@@ -48,8 +48,5 @@ fclean: clean
 	@echo "$(GREEN)TOUT EST ---------------------------> $(BLINK)OK$(NOCOLOR)"
 
 re: fclean all
-	@echo "🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫  $(BLUE)ET C'EST REPARTI ! 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 "
-	@echo "$(BLUE)⚡️ RELINK . . . . . . . . . . . . . . ."
-	@echo "$(GREEN)TOUT EST ---------------------------> $(BLINK)OK$(NOCOLOR)"
 
 .PHONY: all clean fclean re

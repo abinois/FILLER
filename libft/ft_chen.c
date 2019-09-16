@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_chen.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abinois <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 22:06:00 by abinois           #+#    #+#             */
-/*   Updated: 2019/07/28 13:36:55 by ltimsit-         ###   ########.fr       */
+/*   Created: 2019/09/12 09:30:02 by abinois           #+#    #+#             */
+/*   Updated: 2019/09/12 09:31:33 by abinois          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_strdel(char **as)
+void			ft_chen(char *h, int size)
 {
-	if (!as || !*as)
-		return ;
-	ft_memdel((void**)as, 0);
+	char	endian[size];
+	int		i;
+
+	i = -1;
+	while (++i < size)
+		endian[i] = h[size - 1 - i];
+	i = -1;
+	while (++i < size)
+		h[i] = endian[i];
 }

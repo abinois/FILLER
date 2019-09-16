@@ -6,7 +6,7 @@
 /*   By: abinois <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 16:59:14 by abinois           #+#    #+#             */
-/*   Updated: 2019/06/24 18:05:15 by abinois          ###   ########.fr       */
+/*   Updated: 2019/07/28 13:37:18 by ltimsit-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ char	*ft_strsub(const char **s, unsigned int strt, size_t ln, int o)
 	while (ln--)
 		new[i++] = (*s)[strt++];
 	if (o == 1)
-		ft_memdel((void**)s);
+		ft_memdel((void**)s, 0);
 	return (new);
 }

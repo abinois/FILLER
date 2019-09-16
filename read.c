@@ -62,7 +62,7 @@ int		get_board_line(char *line, t_map *map, int lb)
 		if (!(map->b[lb] = (int*)malloc(sizeof(int) * map->nc)))
 		{
 			while (--lb >= 0)
-				ft_memdel((void**)map->b + lb);
+				ft_memdel((void**)map->b + lb, 0);
 			free_map(map, 0);
 			return (-1);
 		}
@@ -75,7 +75,7 @@ int		get_form_line(char *line, t_map *map, int lf)
 	if (!(map->form[lf] = ft_strsub((const char**)&line, 0, map->l_f, 0)))
 	{
 		while (--lf >= 0)
-			ft_memdel((void**)map->form + lf);
+			ft_memdel((void**)map->form + lf, 0);
 		free_map(map, 4);
 		return (-1);
 	}
@@ -104,8 +104,8 @@ int		get_struct(t_map *map, int r, int *lblf, char *line)
 				return (free_map(map, 1));
 		if (map->h_f != 0 && lblf[1] == map->h_f - 1 && lblf[0] == map->nl - 1)
 			break ;
-		ft_memdel((void**)&line);
+		ft_memdel((void**)&line, 0);
 	}
-	ft_memdel((void**)&line);
+	ft_memdel((void**)&line, 0);
 	return (r <= 0 ? -1 : 0);
 }

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_skip_nochar.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abinois <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 22:06:00 by abinois           #+#    #+#             */
-/*   Updated: 2019/07/28 13:36:55 by ltimsit-         ###   ########.fr       */
+/*   Created: 2019/08/24 12:43:12 by abinois           #+#    #+#             */
+/*   Updated: 2019/08/24 12:49:16 by abinois          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_strdel(char **as)
+int		ft_skip_nochar(char *line, char c, int i)
 {
-	if (!as || !*as)
-		return ;
-	ft_memdel((void**)as, 0);
+	if (c <= 0)
+		return (i);
+	while (line[i] && line[i] != c)
+		i++;
+	return (i);
 }

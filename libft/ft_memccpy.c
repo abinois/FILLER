@@ -6,7 +6,7 @@
 /*   By: abinois <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 12:20:22 by abinois           #+#    #+#             */
-/*   Updated: 2019/04/12 11:53:42 by abinois          ###   ########.fr       */
+/*   Updated: 2019/08/08 13:56:42 by abinois          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned char	*dcopy;
 	unsigned char	*scopy;
 
-	if (((unsigned char)c < 0) || !n)
+	if (c < 0 || c > 255 || !n)
 		return (NULL);
 	dcopy = (unsigned char*)dst;
 	scopy = (unsigned char*)src;
